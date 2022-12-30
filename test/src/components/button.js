@@ -9,7 +9,7 @@ class Button {
     event: 'click',
   })
   clickButton() {
-    this.#storeManager.emit('button', { hello: 'ciao' });
+    this.#storeManager.emit('button', { hello: 'pippo' });
   }
 }
 

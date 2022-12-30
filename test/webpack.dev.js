@@ -19,7 +19,6 @@ module.exports = {
     webSocketServer: 'sockjs',
     host: '0.0.0.0',
     allowedHosts: 'all',
-    hot: false,
     port: 3000,
   },
 
