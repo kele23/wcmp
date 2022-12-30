@@ -1,7 +1,7 @@
 {
-  "name": "web-components",
+  "name": "@kele23/web-components",
   "version": "0.1.0",
-  "description": "Another JS framework for web development",
+  "description": "Another JS framework for handling web development",
   "scripts": {
     "build": "babel src -d lib",
     "test": "webpack --config test/webpack.dev.js",
