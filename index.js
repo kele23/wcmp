@@ -1,3 +1,20 @@
-import { service } from './src/annotations/services';
+import WebComponents from './src';
+import { context, dispose, postConstruct } from './src/annotations/common';
+import { component, listener, ref, root, storeListener, sub } from './src/annotations/components';
+import { reference, service } from './src/annotations/services';
 
-export { service };
+export {
+    WebComponents,
+    context,
+    postConstruct,
+    dispose,
+    component,
+    ref,
+    sub,
+    listener,
+    storeListener,
+    root,
+    service,
+    reference,
+};
+

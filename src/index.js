@@ -6,8 +6,9 @@ import { Register } from './utils/register';
 export default class WebComponents {
   #register = new Register();
 
-  constructor(rootElement) {
+  constructor(rootElement, options = {}) {
     this.rootElement = rootElement;
+    this.options = options;
     this.componentRegisterName = this.registerService(ComponentRegister);
     this.storeManagerName = this.registerService(StoreManager);
   }
@@ -254,11 +255,11 @@ export default class WebComponents {
         await this.getService(obj.name);
       });
 
-    this.#showBootstrapMessage();
+    if (this.options.disableConsoleMessage) this.#showConsoleMessage();
   }
 
-  #showBootstrapMessage() {
-    let msg = '%c WEB Components started!!!✌';
+  #showConsoleMessage() {
+    let msg = '%c WEB Components started!!! https://github.com/kele23/web-components ✌';
     let styles = [
       'font-size: 12px',
       'font-family: monospace',
