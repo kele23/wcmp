@@ -255,7 +255,7 @@ export default class WebComponents {
         await this.getService(obj.name);
       });
 
-    if (this.options.disableConsoleMessage) this.#showConsoleMessage();
+    if (!this.options.disableConsoleMessage) this.#showConsoleMessage();
   }
 
   #showConsoleMessage() {
