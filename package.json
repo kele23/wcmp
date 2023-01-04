@@ -1,6 +1,6 @@
 {
   "name": "@kele23/web-components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Another JS framework for handling web development",
   "scripts": {
     "build": "babel src -d lib",
