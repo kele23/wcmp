@@ -44,6 +44,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.tpl/,
+        type: 'asset/source',
+      },
     ],
   },
 };

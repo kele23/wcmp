@@ -15,26 +15,27 @@ export const context = (value, { kind }) => {
 
 /**
  * <b>Decorator expression</b>
- * Starts the decorated method after the object is completly initialized and references are resolved
+ * Method launched when the object is constructed but before object initialization
  *
  */
-export const postConstruct = (value, { kind, addInitializer }) => {
-  if (kind !== 'method') throw 'Annotation postConstruct is only supported in method kind';
+export const beforeInit = (value, { kind, addInitializer }) => {
+  if (kind !== 'method') throw 'Annotation init is only supported in method kind';
 
   addInitializer(function () {
-    this._wcInit = value;
+    value.call(this);
   });
 };
 
 /**
  * <b>Decorator expression</b>
- * Starts the decorated method before the object will be disposed, need to be used in case there are custom listener attached to some elements
+ * Method launched when the decorated method after the object is completly initialized and references are resolved
  *
  */
-export const dispose = (value, { kind, addInitializer }) => {
-  if (kind !== 'method') throw 'Annotation disposed is only supported in method kind';
+export const afterInit = (value, { kind, addInitializer }) => {
+  if (kind !== 'method') throw 'Annotation postConstruct is only supported in method kind';
 
   addInitializer(function () {
-    this._wcCustomDispose = value;
+    if (this._wcInit) this._wcInit.push(value);
+    this._wcInit = [value];
   });
 };

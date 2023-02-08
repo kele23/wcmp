@@ -1,6 +1,6 @@
 import WebComponents from './src';
 import { context, dispose, postConstruct } from './src/annotations/common';
-import { component, listener, ref, root, storeListener, sub } from './src/annotations/components';
+import { component, listener, ref, root, storeListener } from './src/annotations/components';
 import { reference, service } from './src/annotations/services';
 
 export {
@@ -10,7 +10,6 @@ export {
     dispose,
     component,
     ref,
-    sub,
     listener,
     storeListener,
     root,

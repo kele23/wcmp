@@ -1,4 +1,4 @@
-import { context, postConstruct } from '../annotations/common';
+import { afterInit, context } from '../annotations/common';
 import { service } from '../annotations/services';
 
 @service({
@@ -12,7 +12,7 @@ class StoreManager {
     this.cbs = {};
   }
 
-  @postConstruct
+  @afterInit
   init() {
     this.rootEl = this.#wc.getRootElement();
   }
